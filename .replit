@@ -1,0 +1,51 @@
+modules = ["java"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Minecraft Forge Mod Build"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "minecraft_mod_build"
+
+[[workflows.workflow]]
+name = "Minecraft Forge Mod Build"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java)))); ./gradlew build"
+
+[[workflows.workflow]]
+name = "minecraft_mod_build"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./gradlew build"
+
+[deployment]
+run = ["sh", "-c", "export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java)))); ./gradlew build"]

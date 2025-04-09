@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "minecraftfusion:block/bouncy_block" }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "itemGroup.minecraftfusionTab": "Minecraft Fusion",
+  
+  "item.minecraftfusion.super_sword": "Super Sword",
+  "item.minecraftfusion.lightning_bow": "Lightning Bow",
+  "item.minecraftfusion.teleport_rod": "Teleport Rod",
+  "item.minecraftfusion.explosive_tnt_wand": "TNT Wand",
+  "item.minecraftfusion.invisibility_clock": "Invisibility Clock",
+  
+  "block.minecraftfusion.lucky_block": "Lucky Block",
+  "block.minecraftfusion.trap_block": "Trap Block",
+  "block.minecraftfusion.bouncy_block": "Bouncy Block",
+  
+  "entity.minecraftfusion.mutant_zombie": "Mutant Zombie",
+  "entity.minecraftfusion.troll": "Troll",
+  "entity.minecraftfusion.explosive_arrow": "Explosive Arrow",
+  
+  "death.attack.minecraftfusion.luckyblock": "%1$s had an unfortunate lucky block experience",
+  "death.attack.minecraftfusion.trap": "%1$s fell for a trap",
+  "death.attack.minecraftfusion.troll": "%1$s was trolled to death",
+  
+  "key.categories.minecraftfusion": "Minecraft Fusion"
+}
