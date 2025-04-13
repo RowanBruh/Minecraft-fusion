@@ -1,0 +1,464 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #55a630;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #498c29;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    padding: 80px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2d3142;
+    font-size: 2.5rem;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgba(45, 49, 66, 0.95);
+    z-index: 1000;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px;
+    max-width: 200px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #55a630;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/w6JFG5m.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #aaff00;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Features Section */
+.features {
+    background-color: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: #55a630;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: #2d3142;
+}
+
+/* Items Section */
+.items {
+    background-color: #f5f5f5;
+}
+
+.items-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-10px);
+}
+
+.item-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: #3a506b;
+}
+
+#lightning-bow {
+    background-image: url('https://i.imgur.com/GJtKwHs.png');
+}
+
+#troll-stick {
+    background-image: url('https://i.imgur.com/dD5KyZR.png');
+}
+
+#teleport-rod {
+    background-image: url('https://i.imgur.com/3GQTPff.png');
+}
+
+#explosive-wand {
+    background-image: url('https://i.imgur.com/6rTHIPu.png');
+}
+
+.item h3 {
+    padding: 20px 20px 10px;
+    color: #2d3142;
+}
+
+.item p {
+    padding: 0 20px 20px;
+    color: #555;
+}
+
+/* Entities Section */
+.entities {
+    background-color: #2d3142;
+    color: white;
+}
+
+.entities h2 {
+    color: white;
+}
+
+.entities-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.entity {
+    background-color: #3a506b;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.entity:hover {
+    transform: translateY(-10px);
+}
+
+.entity-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-color: #1b1b25;
+}
+
+#troll-entity {
+    background-image: url('https://i.imgur.com/kdXcm95.png');
+}
+
+#explosive-arrow {
+    background-image: url('https://i.imgur.com/9W4EJ4d.png');
+}
+
+#mutant-zombie {
+    background-image: url('https://i.imgur.com/x2fLnrJ.png');
+}
+
+.entity h3 {
+    padding: 20px 20px 10px;
+    color: #f8f9fa;
+}
+
+.entity p {
+    padding: 0 20px 20px;
+    color: #d9d9d9;
+}
+
+/* Download Section */
+.download {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.download p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.download-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.download-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.download-card h3 {
+    margin-bottom: 15px;
+    color: #2d3142;
+}
+
+.download-card p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.download-btn {
+    margin-top: 20px;
+}
+
+.installation {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.installation h3 {
+    margin-bottom: 20px;
+    color: #2d3142;
+    text-align: center;
+}
+
+.installation ol {
+    padding-left: 30px;
+}
+
+.installation li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #2d3142;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+    color: #55a630;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #55a630;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgba(45, 49, 66, 0.95);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding: 20px 0;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+        margin: 20px 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
