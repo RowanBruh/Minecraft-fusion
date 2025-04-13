@@ -35,7 +35,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java)))); ./gradlew build"
+args = "export JAVA_HOME=/nix/store/srvs25mv9c29dnzxpx9d94mrm30l6j93-openjdk-17.0.1+12; ./gradlew build"
 
 [[workflows.workflow]]
 name = "minecraft_mod_build"
@@ -67,7 +67,7 @@ args = "cd website && node server/server.js"
 waitForPort = 5000
 
 [deployment]
-run = ["sh", "-c", "export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java)))); ./gradlew build"]
+run = ["sh", "-c", "export JAVA_HOME=/nix/store/srvs25mv9c29dnzxpx9d94mrm30l6j93-openjdk-17.0.1+12; ./gradlew build"]
 
 [[ports]]
 localPort = 5000
