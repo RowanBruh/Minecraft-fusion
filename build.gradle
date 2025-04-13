@@ -1,34 +1,33 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net/' }
-        maven { url = 'https://maven.parchmentmc.org' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-    }
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
-
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 
 version = '1.0.0'
 group = 'com.youcreator.minecraftfusion'
 archivesBaseName = 'minecraftfusion'
 
-sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
-compileJava.options.encoding = 'UTF-8'
-javadoc.options.encoding = 'UTF-8'
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'official', version: '1.16.5'
+    // The mappings can be changed at any time and must be in the following format.
+    // Channel:   Version:
+    // official   MCVersion             Official mapping for the specific MC version
+    // parchment  YYYY.MM.DD-MCVersion  Parchment community mappings
+    // Use parchment for better names, or official for official obf names
+    mappings channel: 'official', version: '1.21.5'
 
+    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    // Default run configurations.
+    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'minecraftfusion'
             
             mods {
                 minecraftfusion {
@@ -39,8 +38,22 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'minecraftfusion'
+            
+            mods {
+                minecraftfusion {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        gameTestServer {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'minecraftfusion'
             
             mods {
                 minecraftfusion {
@@ -51,7 +64,7 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             args '--mod', 'minecraftfusion', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             
@@ -64,21 +77,33 @@ minecraft {
     }
 }
 
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+}
+
 repositories {
-    maven {
-        // location of the maven that hosts JEI files
+    // For Parchment mappings if needed
+    maven { url = 'https://maven.parchmentmc.org' }
+    // For JEI
+    maven { 
         name = "Progwml6 maven"
-        url = "https://dvs1.progwml6.com/files/maven/"
+        url = "https://dvs1.progwml6.com/files/maven/" 
     }
-    maven {
-        // location of a maven mirror for JEI files, as a fallback
+    maven { 
         name = "ModMaven"
-        url = "https://modmaven.k-4u.nl"
+        url = "https://modmaven.k-4u.nl" 
     }
+    mavenCentral()
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.0'
+    // Specify the version of Minecraft to use. For 1.21.5 with the latest recommended Forge
+    minecraft 'net.minecraftforge:forge:1.21.5-48.1.0'
+
+    // JEI - Just Enough Items API for recipes if needed
+    // compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    // compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    // runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 }
 
 jar {

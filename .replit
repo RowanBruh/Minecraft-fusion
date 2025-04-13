@@ -68,3 +68,7 @@ waitForPort = 5000
 
 [deployment]
 run = ["sh", "-c", "export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java)))); ./gradlew build"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
