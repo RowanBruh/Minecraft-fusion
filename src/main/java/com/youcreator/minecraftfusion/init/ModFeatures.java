@@ -39,15 +39,18 @@ public class ModFeatures {
     // Add our features to biomes
     public static void addFeaturesToBiomes(net.minecraftforge.event.world.BiomeLoadingEvent event) {
         // Check if it's a forest or magical biome
-        if (event.getName() != null && 
-           (event.getName().toString().contains("forest") || 
-            event.getName().toString().contains(MinecraftFusion.MOD_ID + ":troll_forest"))) {
+        if (event.getName() != null) {
+            String biomeName = event.getName().toString().toLowerCase();
             
-            // Add bouncy mushroom patches to forests
-            event.getGeneration().addFeature(
-                GenerationStage.Decoration.VEGETAL_DECORATION,
-                ModWorldGen.getConfiguredFeature(new net.minecraft.util.ResourceLocation(MinecraftFusion.MOD_ID, "bouncy_mushroom_patch"))
-            );
+            if (biomeName.contains("forest") || 
+                biomeName.contains(MinecraftFusion.MOD_ID.toLowerCase() + ":troll_forest")) {
+                
+                // Add bouncy mushroom patches to forests
+                event.getGeneration().addFeature(
+                    GenerationStage.Decoration.VEGETAL_DECORATION,
+                    ModWorldGen.getConfiguredFeature(new net.minecraft.util.ResourceLocation(MinecraftFusion.MOD_ID, "bouncy_mushroom_patch"))
+                );
+            }
         }
     }
 }

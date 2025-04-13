@@ -1,5 +1,6 @@
 package com.youcreator.minecraftfusion.entities;
 
+import com.youcreator.minecraftfusion.init.ModEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -26,7 +27,7 @@ public class ExplosiveArrowEntity extends AbstractArrowEntity {
     }
     
     public ExplosiveArrowEntity(World world, LivingEntity shooter) {
-        super(net.minecraft.entity.EntityType.ARROW, shooter, world);
+        super(ModEntities.EXPLOSIVE_ARROW.get(), shooter, world);
         this.setDamage(2.0); // Base damage
     }
     

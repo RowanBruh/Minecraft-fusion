@@ -1,4 +1,4 @@
-modules = ["java"]
+modules = ["java", "java-8"]
 
 [nix]
 channel = "stable-24_05"

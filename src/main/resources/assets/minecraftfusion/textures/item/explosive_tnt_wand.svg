@@ -1,0 +1,9 @@
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+  <rect x="7" y="0" width="2" height="16" fill="#a85432"/>
+  <rect x="6" y="0" width="1" height="16" fill="#964926"/>
+  <rect x="9" y="0" width="1" height="16" fill="#964926"/>
+  <rect x="4" y="2" width="8" height="8" fill="#ff0000"/>
+  <rect x="5" y="3" width="6" height="6" fill="#ff3333"/>
+  <text x="6" y="8" font-size="4" fill="#ffffff">TNT</text>
+  <rect x="6" y="10" width="4" height="2" fill="#ffcc00"/>
+</svg>

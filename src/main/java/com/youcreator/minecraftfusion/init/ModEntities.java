@@ -1,6 +1,7 @@
 package com.youcreator.minecraftfusion.init;
 
 import com.youcreator.minecraftfusion.MinecraftFusion;
+import com.youcreator.minecraftfusion.entities.ExplosiveArrowEntity;
 import com.youcreator.minecraftfusion.entities.TrollEntity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -24,5 +25,16 @@ public class ModEntities {
                             .sized(0.9F, 1.8F)
                             .clientTrackingRange(8)
                             .build(new ResourceLocation(MinecraftFusion.MOD_ID, "troll_entity").toString())
+            );
+            
+    public static final RegistryObject<EntityType<ExplosiveArrowEntity>> EXPLOSIVE_ARROW = 
+            ENTITY_TYPES.register("explosive_arrow", 
+                    () -> EntityType.Builder.<ExplosiveArrowEntity>of(
+                            ExplosiveArrowEntity::new, 
+                            EntityClassification.MISC)
+                            .sized(0.5F, 0.5F)
+                            .clientTrackingRange(4)
+                            .updateInterval(20)
+                            .build(new ResourceLocation(MinecraftFusion.MOD_ID, "explosive_arrow").toString())
             );
 }

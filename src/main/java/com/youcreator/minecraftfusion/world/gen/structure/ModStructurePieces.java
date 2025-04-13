@@ -12,10 +12,10 @@ import net.minecraftforge.fml.common.Mod;
 public class ModStructurePieces {
     // Register the structure piece types
     public static final IStructurePieceType CHALLENGE_TOWER = 
-        register("challenge_tower", ChallengeTowerPiece::new);
+        registerPiece("challenge_tower", ChallengeTowerPiece::new);
     
     // Method to register a structure piece type
-    private static IStructurePieceType register(String name, IStructurePieceType type) {
+    private static IStructurePieceType registerPiece(String name, IStructurePieceType type) {
         return Registry.register(Registry.STRUCTURE_PIECE, new ResourceLocation(MinecraftFusion.MOD_ID, name), type);
     }
     

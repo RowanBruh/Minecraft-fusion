@@ -87,9 +87,10 @@ public class ModWorldGen {
     // Add structures to biomes
     private static void addStructuresToBiomes(BiomeLoadingEvent event) {
         // Example: Add Challenge Tower to most biomes that aren't ocean or nether
-        if (event.getCategory() != Biome.Category.OCEAN && 
-            event.getCategory() != Biome.Category.NETHER &&
-            event.getCategory() != Biome.Category.THEEND) {
+        String biomeName = event.getName().toString().toLowerCase();
+        if (!biomeName.contains("ocean") && 
+            !biomeName.contains("nether") &&
+            !biomeName.contains("end")) {
             
             // Add our challenge tower structure if we're in a suitable biome
             event.getGeneration().getStructures().add(() -> 

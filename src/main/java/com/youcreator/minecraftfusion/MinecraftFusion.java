@@ -67,5 +67,8 @@ public class MinecraftFusion {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         LOGGER.info("Minecraft Fusion Mod: Client Setup");
+        
+        // The ClientSetup class handles entity renderers through event subscriptions
+        // No need to manually call anything here, but we can initialize other client-side only features
     }
 }

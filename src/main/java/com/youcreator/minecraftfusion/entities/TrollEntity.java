@@ -1,6 +1,7 @@
 package com.youcreator.minecraftfusion.entities;
 
 import com.youcreator.minecraftfusion.init.ModItems;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;

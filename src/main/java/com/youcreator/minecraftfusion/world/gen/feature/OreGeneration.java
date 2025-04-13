@@ -74,9 +74,10 @@ public class OreGeneration {
     
     // Method to add ores to biomes
     public static void addOresToBiomes(BiomeLoadingEvent event) {
+        String biomeName = event.getName().toString().toLowerCase();
+        
         // Add lucky ore to all biomes except ocean, nether, and end
-        if (event.getCategory() != Biome.Category.NETHER && 
-            event.getCategory() != Biome.Category.THEEND) {
+        if (!biomeName.contains("nether") && !biomeName.contains("end")) {
             
             // Add lucky ores to standard biomes
             event.getGeneration().addFeature(
@@ -86,9 +87,10 @@ public class OreGeneration {
         }
         
         // Add trap ores to only certain biomes
-        if (event.getCategory() == Biome.Category.EXTREME_HILLS || 
-            event.getCategory() == Biome.Category.FOREST ||
-            event.getName().toString().contains(MinecraftFusion.MOD_ID + ":troll_forest")) {
+        if (biomeName.contains("hills") || 
+            biomeName.contains("mountain") || 
+            biomeName.contains("forest") ||
+            biomeName.contains(MinecraftFusion.MOD_ID + ":troll_forest")) {
             
             // Add trap ores to dangerous biomes
             event.getGeneration().addFeature(

@@ -51,7 +51,7 @@ public class ChallengeTowerPiece extends TemplateStructurePiece {
         Template template = templateManager.getOrCreate(this.templateResource);
         PlacementSettings placementsettings = (new PlacementSettings())
                 .setRotation(this.rotation)
-                .setMirror(net.minecraft.util.Mirror.NONE)
+                .setMirror(Mirror.NONE)
                 .addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_BLOCK);
         this.setup(template, this.templatePosition, placementsettings);
     }
@@ -106,7 +106,7 @@ public class ChallengeTowerPiece extends TemplateStructurePiece {
         // Prepare blocks for structure placement
         PlacementSettings placementsettings = (new PlacementSettings())
                 .setRotation(this.rotation)
-                .setMirror(net.minecraft.util.Mirror.NONE)
+                .setMirror(Mirror.NONE)
                 .addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_BLOCK);
         
         // Adjust the position to be on the surface of the world
