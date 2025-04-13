@@ -240,6 +240,113 @@ nav {
     color: white;
 }
 
+/* Screenshots Section */
+.screenshots {
+    background-color: #1a1e2a;
+    color: white;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.screenshots h2 {
+    color: white;
+}
+
+.screenshot-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    height: 500px;
+}
+
+.screenshot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.screenshot:first-child {
+    opacity: 1;
+}
+
+.screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.screenshot-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(45, 49, 66, 0.9);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.screenshot:hover .screenshot-caption {
+    transform: translateY(0);
+}
+
+.screenshot-caption h3 {
+    margin-bottom: 10px;
+    color: #aaff00;
+}
+
+.slider-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev-btn, .next-btn {
+    background-color: #55a630;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #498c29;
+    transform: scale(1.1);
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #55a630;
+    transform: scale(1.2);
+}
+
 .entities-showcase {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -445,6 +552,51 @@ footer {
 
     .hero h2 {
         font-size: 1.5rem;
+    }
+    
+    .screenshot-slider {
+        height: 350px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .screenshot-slider {
+        height: 250px;
+    }
+    
+    .feature-card, .item, .entity, .download-card {
+        padding: 15px;
+    }
+    
+    .feature-card i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .prev-btn, .next-btn {
+        width: 30px;
+        height: 30px;
     }
 }
 

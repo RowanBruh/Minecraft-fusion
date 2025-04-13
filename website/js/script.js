@@ -58,6 +58,71 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Screenshot Slider
+    const screenshots = document.querySelectorAll('.screenshot');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentSlide = 0;
+    
+    // Function to show a specific slide
+    function showSlide(n) {
+        // Hide all slides
+        screenshots.forEach(slide => {
+            slide.style.opacity = '0';
+        });
+        
+        // Remove active class from all dots
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // Show the current slide
+        screenshots[n].style.opacity = '1';
+        dots[n].classList.add('active');
+        currentSlide = n;
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % screenshots.length;
+        showSlide(currentSlide);
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + screenshots.length) % screenshots.length;
+        showSlide(currentSlide);
+    }
+    
+    // Event listeners for slider controls
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+    }
+    
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+    
+    // Auto-advance slides every 5 seconds
+    let slideInterval = setInterval(nextSlide, 5000);
+    
+    // Pause slider on hover
+    const sliderContainer = document.querySelector('.screenshot-slider');
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+    }
+    
     // Animation on Scroll
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.feature-card, .item, .entity, .download-card');
