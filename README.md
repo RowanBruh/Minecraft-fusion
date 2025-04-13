@@ -12,7 +12,7 @@ A Minecraft mod inspired by popular YouTube content creators, integrating unique
 
 ## Installation
 
-1. Install Minecraft Forge for Minecraft 1.18.2
+1. Install Minecraft Forge for Minecraft 1.21.5
 2. Download the latest release from the releases page
 3. Place the .jar file in your Minecraft mods folder
 4. Launch Minecraft with the Forge profile
@@ -20,7 +20,7 @@ A Minecraft mod inspired by popular YouTube content creators, integrating unique
 ## Development
 
 This mod is built with:
-- Minecraft Forge 1.18.2-40.2.0
+- Minecraft Forge 1.21.5
 - Java 17
 - Gradle 7.4.1
 
