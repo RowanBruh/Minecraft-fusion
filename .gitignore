@@ -1,0 +1,37 @@
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+bin/
+
+# VSCode files
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Minecraft/Forge specific
+run/
+*.launch
+.log
+logs/
+*.log
+
+# Other
+*.class
+hs_err_pid*
+crash-reports/
+screenshots/
